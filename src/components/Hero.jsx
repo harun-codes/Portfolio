@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaFacebookF,
-  FaXTwitter,
 } from "react-icons/fa6";
 
 import { FiArrowUpRight, FiDownload } from "react-icons/fi";
@@ -26,7 +25,7 @@ const socials = [
     name: "Facebook",
     icon: FaFacebookF,
     href: "https://www.facebook.com/mh.babu.5437",
-  }
+  },
 ];
 
 export default function Hero() {
@@ -37,18 +36,14 @@ export default function Hero() {
     >
       {/* Left Content */}
       <div className="text-center lg:text-left">
-
-        {/* Greeting */}
         <p className="mb-3 text-lg font-medium text-gray-600 sm:text-xl dark:text-[#9FB0CA]">
           Hi, I&apos;m
         </p>
 
-        {/* Name */}
         <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-[#111827] sm:text-5xl lg:text-[3.7rem] dark:text-[#CCD6F6]">
           Harun Or Roshid
         </h1>
 
-        {/* Designation */}
         <div className="mb-5 flex items-center justify-center gap-3 lg:justify-start">
           <span className="h-[2px] w-7 bg-[#2563EB] dark:bg-[#64FFDA]" />
 
@@ -57,7 +52,6 @@ export default function Hero() {
           </h2>
         </div>
 
-        {/* Description */}
         <p className="mx-auto mb-7 max-w-lg text-base leading-7 text-gray-600 lg:mx-0 dark:text-[#9FB0CA]">
           I build modern, responsive and user-friendly web
           applications using React, Next.js and modern web
@@ -67,7 +61,6 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-
           <Link
             href="/#projects"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1D4ED8] dark:bg-[#64FFDA] dark:text-[#0A192F] dark:hover:bg-[#4CE9C3]"
@@ -78,18 +71,16 @@ export default function Hero() {
 
           <a
             href="/resume.pdf"
-            download="resume.pdf"
+            download="Harun-Or-Roshid-Resume.pdf"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-6 py-3.5 text-sm font-semibold text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2563EB] hover:bg-gray-50 dark:border-[#27405E] dark:text-[#CCD6F6] dark:hover:border-[#64FFDA] dark:hover:bg-[#112442]"
           >
             <FiDownload size={17} />
             Download Resume
           </a>
-
         </div>
 
         {/* Social Links */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-
           <span className="text-sm font-medium text-gray-500 dark:text-[#9FB0CA]">
             Contact me
           </span>
@@ -98,7 +89,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-2.5">
             {socials.map(({ name, icon: Icon, href }) => (
-              <Link
+              <a
                 key={name}
                 href={href}
                 target="_blank"
@@ -108,7 +99,7 @@ export default function Hero() {
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition-all duration-200 hover:-translate-y-1 hover:border-[#2563EB] hover:bg-[#EFF6FF] hover:text-[#2563EB] dark:border-[#27405E] dark:text-[#9FB0CA] dark:hover:border-[#64FFDA] dark:hover:bg-[#112442] dark:hover:text-[#64FFDA]"
               >
                 <Icon size={17} />
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -116,18 +107,16 @@ export default function Hero() {
 
       {/* Right Side - Profile Image */}
       <div className="mx-auto w-full max-w-[280px] sm:max-w-[330px] lg:ml-auto lg:mr-0">
-
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 dark:border-[#27405E] dark:bg-[#112442]">
-
           <Image
             src="/profile.jpg"
             alt="Harun Or Roshid"
             fill
             priority
-            sizes="(max-width: 640px) 280px, 330px"
+            fetchPriority="high"
+            sizes="(max-width: 639px) 280px, 330px"
             className="object-cover"
           />
-
         </div>
       </div>
     </section>

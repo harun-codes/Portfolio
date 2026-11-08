@@ -95,7 +95,7 @@ export default function Education() {
               </div>
             </div>
 
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-4 py-2 text-xs font-semibold text-white dark:bg-[#0D9488]">
+           <span className="inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-4 py-2 text-xs font-semibold text-white dark:bg-[#64FFDA] dark:text-[#0A192F]">
               <FiCalendar size={14} />
               {university.duration}
             </span>
