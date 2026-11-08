@@ -4,8 +4,59 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import { projects } from "@/data/projects";
+import { siteUrl } from "@/lib/seo";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const project = projects.find(
+    (item) => item.slug === slug
+  );
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: project.title,
+
+    description: project.shortDescription,
+
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
+
+    openGraph: {
+      title: `${project.title} | Harun Or Roshid`,
+      description: project.shortDescription,
+      url: `${siteUrl}/projects/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: project.image,
+          alt: `${project.title} project preview`,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Harun Or Roshid`,
+      description: project.shortDescription,
+      images: [project.image],
+    },
+  };
+}
+
 
 export function generateStaticParams() {
+
   return projects.map((project) => ({
     slug: project.slug,
   }));

@@ -1,6 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import {
+  siteName,
+  siteUrl,
+  siteTitle,
+  siteDescription,
+} from "@/lib/seo";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,20 +21,56 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title: "Harun Or Roshid - Full Stack Developer",
+  metadataBase: new URL(siteUrl),
 
-  description:
-    "Portfolio of Harun Or Roshid, a Full Stack Developer specializing in React, Next.js, Node.js, MongoDB and modern web development.",
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteName}`,
+  },
+
+  description: siteDescription,
 
   keywords: [
     "Harun Or Roshid",
+    "Harun Developer",
     "Full Stack Developer",
-    "Web Developer",
-    "React",
-    "Next.js",
-    "Portfolio",
+    "Next.js Developer",
+    "React Developer",
+    "JavaScript Developer",
+    "Web Developer Portfolio",
   ],
+
+  authors: [
+    {
+      name: siteName,
+      url: siteUrl,
+    },
+  ],
+
+  creator: siteName,
+
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteName,
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/opengraph-image"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (

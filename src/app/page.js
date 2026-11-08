@@ -8,6 +8,13 @@ import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Certificates from "@/components/Certificates";
+
+export const metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
@@ -21,6 +28,7 @@ export default function Home() {
         <Projects />
         <Education />
         <Experience/>
+        <Certificates />
         <Contact />
       </main>
        <Footer/>
