@@ -76,14 +76,15 @@ export default function Hero() {
             <FiArrowUpRight size={17} />
           </Link>
 
-          <Link
+          <a
             href="/resume.pdf"
-            download="Harun-Or-Roshid-Resume.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-5 py-3 text-sm font-semibold text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2563EB] hover:bg-gray-50 dark:border-[#27405E] dark:text-[#CCD6F6] dark:hover:border-[#64FFDA] dark:hover:bg-[#112442]"
+            download="resume.pdf"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 px-6 py-3.5 text-sm font-semibold text-[#111827] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2563EB] hover:bg-gray-50 dark:border-[#27405E] dark:text-[#CCD6F6] dark:hover:border-[#64FFDA] dark:hover:bg-[#112442]"
           >
-            Download Resume
             <FiDownload size={17} />
-          </Link>
+            Download Resume
+          </a>
+
         </div>
 
         {/* Social Links */}
