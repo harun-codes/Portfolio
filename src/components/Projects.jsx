@@ -31,8 +31,7 @@ export default function Projects() {
               key={project.slug}
               className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-colors hover:border-[#2563EB] dark:border-[#27405E] dark:bg-[#112442] dark:hover:border-[#64FFDA]"
             >
-              {/* Image */}
-
+        
               {/* Project Image */}
               <div className="relative h-52 w-full overflow-hidden bg-gray-50 dark:bg-[#0A192F]">
                 <Image
